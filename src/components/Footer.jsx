@@ -4,68 +4,160 @@ import { Link, useLocation } from 'react-router-dom';
 
 const Footer = () => {
   const location = useLocation();
+  const currentYear = new Date().getFullYear();
+
   const links = [
     { icon: "github", href: "#", label: "GitHub" },
     { icon: "instagram", href: "#", label: "Instagram" },
     { icon: "twitter", href: "#", label: "Twitter" },
     { icon: "linkedin", href: "#", label: "LinkedIn" },
-    { icon: "codepen", href: "#", label: "CodePen" },
+    { icon: "dribbble", href: "#", label: "Dribbble" }
+  ];
+
+  const footerLinks = [
+    { text: "About", href: "/about" },
+    { text: "Work", href: "/work" },
+    { text: "Contact", href: "/contact" },
+    { text: "Resume", href: "/resume" }
   ];
 
   return (
-    <footer className="py-12 md:py-16 mt-16 md:mt-24 px-4 md:px-0">
+    <footer className="relative pt-24 pb-12 overflow-hidden">
+      {/* Decorative Elements */}
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute -right-64 -bottom-64 w-96 h-96 rounded-full bg-[#64ffda]/5"></div>
+        <div className="absolute -left-64 -bottom-32 w-96 h-96 rounded-full bg-[#64ffda]/3"></div>
+      </div>
+
       {location.pathname !== '/contact' && (
         <motion.div 
-          className="max-w-3xl mx-auto text-center mb-12 md:mb-16"
+          className="max-w-3xl mx-auto text-center mb-20 px-6"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-[#64ffda] font-mono mb-4 text-base md:text-lg">What's Next!</h2>
+          <h2 className="text-[#64ffda] font-mono mb-4 text-lg">What's Next?</h2>
           <h3 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-200 mb-6">Get In Touch</h3>
-          <p className="text-base md:text-lg text-slate-400 mb-8 md:mb-12 max-w-2xl mx-auto break-words">
-            Although I'm not currently looking for any new opportunities, my inbox is always open. 
-            Whether you have a question or just want to say hi, I'll try my best to get back to you!
+          <p className="text-lg text-slate-400 mb-8 max-w-2xl mx-auto">
+            I'm currently looking for new opportunities. Whether you have a question
+            or just want to say hello, I'll get back to you as soon as possible!
           </p>
           <Link to="/contact">
             <motion.button 
-              className="inline-block border-2 border-[#64ffda] text-[#64ffda] px-6 md:px-8 py-3 md:py-4 rounded font-mono text-base md:text-lg hover:bg-[#64ffda]/10 transition-colors"
-              whileHover={{ y: -4 }}
-              transition={{ duration: 0.2 }}
+              className="px-8 py-4 bg-transparent border-2 border-[#64ffda] text-[#64ffda] rounded-lg font-mono text-lg relative group overflow-hidden"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
             >
-              Say Hello
+              <span className="relative z-10">Say Hello</span>
+              <div className="absolute inset-0 bg-[#64ffda] transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></div>
+              <span className="absolute inset-0 flex items-center justify-center text-[#0a192f] opacity-0 group-hover:opacity-100 transition-opacity">
+                Say Hello
+              </span>
             </motion.button>
           </Link>
         </motion.div>
       )}
 
-      <ul className="flex justify-center space-x-6 mb-6">
-        {links.map((link, index) => (
-          <motion.li
-            key={index}
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: index * 0.1 }}
-          >
-            <a
-              href={link.href}
-              aria-label={link.label}
-              className="text-slate-400 hover:text-[#64ffda] transition-all duration-200 block"
+      <div className="max-w-6xl mx-auto px-6">
+        <div className="grid md:grid-cols-3 gap-12 mb-12 relative">
+          {/* Brand Section */}
+          <div className="text-center md:text-left">
+            <Link to="/" className="inline-block">
+              <motion.div 
+                className="w-12 h-12 border-2 border-[#64ffda] text-[#64ffda] flex items-center justify-center mb-4"
+                whileHover={{ scale: 1.1, rotate: 90 }}
+                transition={{ type: "spring", stiffness: 400, damping: 10 }}
+              >
+                <span className="text-2xl font-bold">A</span>
+              </motion.div>
+            </Link>
+            <p className="text-slate-400 max-w-sm">
+              Building digital experiences that make a difference. Let's create something amazing together.
+            </p>
+          </div>
+
+          {/* Quick Links */}
+          <div className="text-center">
+            <h4 className="text-slate-200 font-mono mb-4">Quick Links</h4>
+            <ul className="space-y-2">
+              {footerLinks.map((link, index) => (
+                <motion.li 
+                  key={index}
+                  whileHover={{ x: 5 }}
+                  transition={{ type: "spring", stiffness: 400 }}
+                >
+                  <Link 
+                    to={link.href}
+                    className="text-slate-400 hover:text-[#64ffda] transition-colors"
+                  >
+                    {link.text}
+                  </Link>
+                </motion.li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Contact Info */}
+          <div className="text-center md:text-right">
+            <h4 className="text-slate-200 font-mono mb-4">Contact</h4>
+            <div className="space-y-2 text-slate-400">
+              <p>San Francisco, CA</p>
+              <p>LikhonOfficial@Hotmail.com</p>
+              <p>+1 (555) 123-4567</p>
+            </div>
+          </div>
+        </div>
+
+        {/* Social Links */}
+        <div className="border-t border-slate-800 pt-8">
+          <ul className="flex justify-center space-x-6 mb-8">
+            {links.map((link, index) => (
+              <motion.li
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: index * 0.1 }}
+              >
+                <a
+                  href={link.href}
+                  aria-label={link.label}
+                  className="text-slate-400 hover:text-[#64ffda] transition-all duration-300"
+                >
+                  <motion.i 
+                    className={`ri-${link.icon}-line text-xl`}
+                    whileHover={{ y: -4 }}
+                    transition={{ type: "spring", stiffness: 400 }}
+                  />
+                </a>
+              </motion.li>
+            ))}
+          </ul>
+
+          <div className="text-center">
+            <motion.p 
+              className="text-slate-400 font-mono text-sm"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.5 }}
             >
-              <i className={`ri-${link.icon}-line text-xl`}></i>
-            </a>
-          </motion.li>
-        ))}
-      </ul>
-      
-      <motion.p 
-        className="text-center text-slate-400 font-mono text-xs md:text-sm break-words"
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.3 }}
-      >
-        Designed and built by Axtillar
-      </motion.p>
+              <span className="text-[#64ffda]">&copy; {currentYear}</span> Built with 
+              <motion.i 
+                className="ri-heart-fill mx-1 text-[#64ffda]"
+                animate={{ 
+                  scale: [1, 1.2, 1],
+                  rotate: [0, 10, -10, 0]
+                }}
+                transition={{ 
+                  duration: 1,
+                  repeat: Infinity,
+                  repeatDelay: 1
+                }}
+              />
+              by <span className="text-[#64ffda]">Axtillar</span>
+            </motion.p>
+          </div>
+        </div>
+      </div>
     </footer>
   );
 };
