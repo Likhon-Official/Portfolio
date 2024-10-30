@@ -2,50 +2,89 @@ import { motion } from 'framer-motion';
 
 function About() {
   const skills = [
-    { name: "JavaScript", level: 90 },
-    { name: "React", level: 85 },
-    { name: "Node.js", level: 80 },
-    { name: "TypeScript", level: 75 },
-    { name: "Python", level: 70 },
-    { name: "AWS", level: 65 }
+    { name: "JavaScript", level: 90, color: "#F7DF1E" },
+    { name: "React", level: 85, color: "#61DAFB" },
+    { name: "Node.js", level: 80, color: "#339933" },
+    { name: "TypeScript", level: 75, color: "#3178C6" },
+    { name: "Python", level: 70, color: "#3776AB" },
+    { name: "AWS", level: 65, color: "#FF9900" }
   ];
 
   const interests = [
-    { icon: "code-box-line", title: "Programming", description: "Building elegant solutions to complex problems" },
-    { icon: "terminal-box-line", title: "Open Source", description: "Contributing to the developer community" },
-    { icon: "gamepad-line", title: "Gaming", description: "Strategy and RPG games enthusiast" },
-    { icon: "book-line", title: "Reading", description: "Tech blogs and sci-fi novels" }
+    { 
+      icon: "code-box-line", 
+      title: "Programming",
+      description: "Building elegant solutions to complex problems",
+      color: "#64ffda"
+    },
+    { 
+      icon: "terminal-box-line", 
+      title: "Open Source",
+      description: "Contributing to the developer community",
+      color: "#FF6B6B"
+    },
+    { 
+      icon: "gamepad-line", 
+      title: "Gaming",
+      description: "Strategy and RPG games enthusiast",
+      color: "#4ECDC4"
+    },
+    { 
+      icon: "book-line", 
+      title: "Reading",
+      description: "Tech blogs and sci-fi novels",
+      color: "#96F7D2"
+    }
   ];
+
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: { staggerChildren: 0.1 }
+    }
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.5 }
+    }
+  };
 
   return (
     <motion.div 
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.6 }}
-      className="max-w-5xl mx-auto pt-32 pb-24"
+      className="max-w-6xl mx-auto pt-32 pb-24 px-4 sm:px-6 lg:px-8"
     >
-      <header className="mb-16">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.2 }}
-        >
-          <h1 className="text-[#64ffda] font-mono mb-4">01. About Me</h1>
-          <div className="h-0.5 w-full bg-slate-700 relative">
-            <div className="absolute inset-y-0 left-0 bg-[#64ffda] w-24"></div>
-          </div>
-        </motion.div>
-      </header>
+      {/* Header */}
+      <motion.div 
+        className="text-center mb-16"
+        variants={containerVariants}
+        initial="hidden"
+        animate="visible"
+      >
+        <motion.p variants={itemVariants} className="text-[#64ffda] font-mono mb-4">
+          04. About Me
+        </motion.p>
+        <motion.h1 variants={itemVariants} className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-200 mb-6">
+          Know Who I Am
+        </motion.h1>
+      </motion.div>
 
-      <div className="grid md:grid-cols-3 gap-12">
-        {/* Bio Section */}
-        <motion.div 
-          className="md:col-span-2"
-          initial={{ opacity: 0, x: -20 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ delay: 0.3 }}
-        >
-          <div className="prose prose-invert">
+      {/* Story Section */}
+      <motion.div 
+        variants={containerVariants}
+        initial="hidden"
+        animate="visible"
+        className="grid md:grid-cols-2 gap-12 items-center mb-24"
+      >
+        <motion.div variants={itemVariants} className="order-2 md:order-1">
+          <div className="prose prose-invert max-w-none">
             <p className="text-lg text-slate-400 mb-6">
               Hello! I'm LikHon, a passionate software developer based in San Francisco, CA. 
               I enjoy creating things that live on the internet, whether that be websites, 
@@ -64,80 +103,94 @@ function About() {
           </div>
         </motion.div>
 
-        {/* Profile Image with Animation */}
-        <motion.div
-          initial={{ opacity: 0, x: 20 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ delay: 0.4 }}
-          className="relative group"
-        >
-          <div className="relative z-10 rounded-2xl overflow-hidden aspect-square bg-[#64ffda]/10 p-2">
-            <img
-              src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?fit=crop&w=800&h=800&q=80"
-              alt="Profile"
-              className="w-full h-full object-cover rounded-xl transition-all duration-500 
-                filter grayscale hover:grayscale-0 hover:scale-105"
-            />
-            <div className="absolute inset-0 bg-[#64ffda]/10 mix-blend-multiply rounded-xl"></div>
+        <motion.div variants={itemVariants} className="order-1 md:order-2">
+          <div className="relative group">
+            <div className="relative z-10 rounded-2xl overflow-hidden bg-[#64ffda]/10 p-2">
+              <img
+                src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?fit=crop&w=800&h=800&q=80"
+                alt="Profile"
+                className="w-full h-full object-cover rounded-xl transition-all duration-500 
+                  filter grayscale hover:grayscale-0 hover:scale-105"
+              />
+              <div className="absolute inset-0 bg-[#64ffda]/10 mix-blend-multiply rounded-xl"></div>
+            </div>
+            <div className="absolute inset-0 border-2 border-[#64ffda] rounded-2xl -z-10 translate-x-4 translate-y-4 
+              transition-transform duration-300 group-hover:translate-x-6 group-hover:translate-y-6"></div>
           </div>
-          <div className="absolute inset-0 border-2 border-[#64ffda] rounded-2xl -z-10 translate-x-4 translate-y-4"></div>
         </motion.div>
-      </div>
+      </motion.div>
 
       {/* Skills Section */}
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.5 }}
-        className="mt-20"
+      <motion.section
+        variants={containerVariants}
+        initial="hidden"
+        animate="visible"
+        className="mb-24"
       >
-        <h2 className="text-2xl text-slate-200 mb-8">Skills & Technologies</h2>
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
+        <motion.h2 variants={itemVariants} className="text-3xl md:text-4xl font-bold text-slate-200 mb-8 text-center">
+          Skills & Expertise
+        </motion.h2>
+        <motion.div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {skills.map((skill, index) => (
-            <div key={index} className="bg-[#112240] p-4 rounded-lg">
-              <div className="flex justify-between items-center mb-2">
-                <span className="text-slate-200">{skill.name}</span>
-                <span className="text-[#64ffda] text-sm">{skill.level}%</span>
+            <motion.div
+              key={index}
+              variants={itemVariants}
+              className="bg-[#112240] p-6 rounded-lg hover:shadow-lg transition-all duration-300 group"
+              style={{
+                background: `linear-gradient(135deg, ${skill.color}10, #112240)`
+              }}
+            >
+              <div className="flex justify-between items-center mb-4">
+                <h3 className="text-xl text-slate-200">{skill.name}</h3>
+                <span className="text-[#64ffda] font-mono">{skill.level}%</span>
               </div>
-              <div className="h-2 bg-[#0a192f] rounded-full">
+              <div className="h-2 bg-[#0a192f] rounded-full overflow-hidden">
                 <motion.div
                   initial={{ width: 0 }}
                   animate={{ width: `${skill.level}%` }}
                   transition={{ duration: 1, delay: 0.2 }}
-                  className="h-full bg-[#64ffda] rounded-full"
+                  className="h-full rounded-full"
+                  style={{ backgroundColor: skill.color }}
                 />
               </div>
-            </div>
+            </motion.div>
           ))}
-        </div>
-      </motion.div>
+        </motion.div>
+      </motion.section>
 
       {/* Interests Section */}
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.6 }}
-        className="mt-20"
+      <motion.section
+        variants={containerVariants}
+        initial="hidden"
+        animate="visible"
       >
-        <h2 className="text-2xl text-slate-200 mb-8">Interests & Hobbies</h2>
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+        <motion.h2 variants={itemVariants} className="text-3xl md:text-4xl font-bold text-slate-200 mb-8 text-center">
+          Interests & Hobbies
+        </motion.h2>
+        <motion.div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {interests.map((interest, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.1 * index }}
-              className="bg-[#112240] p-6 rounded-lg text-center group hover:bg-[#64ffda]/5 transition-all duration-300"
+              variants={itemVariants}
+              className="bg-[#112240] p-6 rounded-lg text-center group hover:shadow-lg transition-all duration-300"
+              style={{
+                background: `linear-gradient(135deg, ${interest.color}10, #112240)`
+              }}
             >
-              <div className="w-12 h-12 mx-auto mb-4 rounded-lg bg-[#64ffda]/10 flex items-center justify-center group-hover:bg-[#64ffda]/20 transition-colors">
-                <i className={`ri-${interest.icon} text-2xl text-[#64ffda]`}></i>
-              </div>
-              <h3 className="text-slate-200 mb-2">{interest.title}</h3>
-              <p className="text-sm text-slate-400">{interest.description}</p>
+              <motion.div 
+                className="w-16 h-16 mx-auto mb-4 rounded-lg flex items-center justify-center"
+                style={{ backgroundColor: `${interest.color}20` }}
+                whileHover={{ scale: 1.1, rotate: 360 }}
+                transition={{ duration: 0.3 }}
+              >
+                <i className={`ri-${interest.icon} text-3xl`} style={{ color: interest.color }}></i>
+              </motion.div>
+              <h3 className="text-xl text-slate-200 mb-2">{interest.title}</h3>
+              <p className="text-slate-400">{interest.description}</p>
             </motion.div>
           ))}
-        </div>
-      </motion.div>
+        </motion.div>
+      </motion.section>
     </motion.div>
   );
 }
