@@ -60,7 +60,7 @@ const Home = () => {
               <TypeAnimation
                 sequence={[
                   'Full Stack Developer',
-                  1900,
+                  2000,
                   'UI/UX Designer',
                   2000,
                   'Tech Enthusiast',
