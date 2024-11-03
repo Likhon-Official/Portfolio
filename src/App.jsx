@@ -4,6 +4,7 @@ import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import LoadingScreen from './components/LoadingScreen';
 import ScrollProgress from './components/ScrollProgress';
+import { ScrollReveal } from './components/ScrollReveal';
 
 // Lazy load pages
 const Home = lazy(() => import('./pages/Home'));
@@ -43,15 +44,17 @@ function App() {
         <Navbar />
         <div className="px-4 md:px-8 lg:px-16 xl:px-24 relative pt-16 md:pt-0">
           <Suspense fallback={<LoadingScreen />}>
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/services" element={<Services />} />
-              <Route path="/resume" element={<Resume />} />
-              <Route path="/about" element={<About />} />
-              <Route path="/work" element={<Work />} />
-              <Route path="/contact" element={<Contact />} />
-              <Route path="*" element={<Navigate to="/" replace />} />
-            </Routes>
+            <ScrollReveal>
+              <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/services" element={<Services />} />
+                <Route path="/resume" element={<Resume />} />
+                <Route path="/about" element={<About />} />
+                <Route path="/work" element={<Work />} />
+                <Route path="/contact" element={<Contact />} />
+                <Route path="*" element={<Navigate to="/" replace />} />
+              </Routes>
+            </ScrollReveal>
           </Suspense>
           <Footer />
         </div>
