@@ -1,12 +1,12 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Link } from 'react-router-dom';
-import { ScrollReveal } from './ScrollReveal';
+import { Link, useLocation } from 'react-router-dom';
 
 const Footer = () => {
+  const location = useLocation();
   const currentYear = new Date().getFullYear();
 
-  const socialLinks = [
+  const links = [
     { icon: "github", href: "#", label: "GitHub" },
     { icon: "instagram", href: "#", label: "Instagram" },
     { icon: "twitter", href: "#", label: "Twitter" },
@@ -14,163 +14,149 @@ const Footer = () => {
     { icon: "dribbble", href: "#", label: "Dribbble" }
   ];
 
-  const quickLinks = [
+  const footerLinks = [
     { text: "About", href: "/about" },
     { text: "Work", href: "/work" },
-    { text: "Services", href: "/services" },
-    { text: "Contact", href: "/contact" }
+    { text: "Contact", href: "/contact" },
+    { text: "Resume", href: "/resume" }
   ];
 
   return (
-    <footer className="relative pt-32 pb-8">
-      {/* Get In Touch Section */}
-      <ScrollReveal>
-        <div className="max-w-4xl mx-auto text-center mb-24 px-6">
-          <motion.h2 
-            className="text-[#64ffda] font-mono mb-4"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-          >
-            What's Next?
-          </motion.h2>
-          <motion.h3 
-            className="text-5xl md:text-6xl lg:text-7xl font-bold text-slate-200 mb-8"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.1 }}
-          >
-            Get In Touch
-          </motion.h3>
-          <motion.p 
-            className="text-lg text-slate-400 mb-12 max-w-2xl mx-auto"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.2 }}
-          >
-            Currently available for freelance work and collaborations. 
-            Feel free to reach out if you have an exciting project in mind!
-          </motion.p>
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.3 }}
-          >
-            <Link 
-              to="/contact"
-              className="inline-block px-8 py-4 bg-transparent border-2 border-[#64ffda] text-[#64ffda] 
-                rounded-lg font-mono text-lg relative group overflow-hidden"
+    <footer className="relative pt-24 pb-12 overflow-hidden">
+      {/* Decorative Elements */}
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute -right-64 -bottom-64 w-96 h-96 rounded-full bg-[#64ffda]/5"></div>
+        <div className="absolute -left-64 -bottom-32 w-96 h-96 rounded-full bg-[#64ffda]/3"></div>
+      </div>
+
+      {location.pathname !== '/contact' && (
+        <motion.div 
+          className="max-w-3xl mx-auto text-center mb-20 px-6"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+        >
+          <h2 className="text-[#64ffda] font-mono mb-4 text-lg">What's Next?</h2>
+          <h3 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-200 mb-6">Get In Touch</h3>
+          <p className="text-lg text-slate-400 mb-8 max-w-2xl mx-auto">
+            I'm currently looking for new opportunities. Whether you have a question
+            or just want to say hello, I'll get back to you as soon as possible!
+          </p>
+          <Link to="/contact">
+            <motion.button 
+              className="px-8 py-4 bg-transparent border-2 border-[#64ffda] text-[#64ffda] rounded-lg font-mono text-lg relative group overflow-hidden"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
             >
-              <span className="relative z-10 group-hover:text-[#0a192f] transition-colors duration-300">
+              <span className="relative z-10">Say Hello</span>
+              <div className="absolute inset-0 bg-[#64ffda] transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></div>
+              <span className="absolute inset-0 flex items-center justify-center text-[#0a192f] opacity-0 group-hover:opacity-100 transition-opacity">
                 Say Hello
               </span>
-              <div className="absolute inset-0 bg-[#64ffda] transform scale-x-0 group-hover:scale-x-100 
-                transition-transform duration-300 origin-left"></div>
-            </Link>
-          </motion.div>
-        </div>
-      </ScrollReveal>
+            </motion.button>
+          </Link>
+        </motion.div>
+      )}
 
-      {/* Footer Content */}
       <div className="max-w-6xl mx-auto px-6">
-        <ScrollReveal delay={0.2}>
-          <div className="grid md:grid-cols-4 gap-12 mb-16">
-            {/* Brand Section */}
-            <div className="md:col-span-2">
-              <Link to="/" className="inline-block mb-6">
-                <motion.div 
-                  className="w-12 h-12 border-2 border-[#64ffda] text-[#64ffda] flex items-center justify-center"
-                  whileHover={{ scale: 1.1, rotate: 90 }}
-                  transition={{ type: "spring", stiffness: 400, damping: 10 }}
+        <div className="grid md:grid-cols-3 gap-12 mb-12 relative">
+          {/* Brand Section */}
+          <div className="text-center md:text-left">
+            <Link to="/" className="inline-block">
+              <motion.div 
+                className="w-12 h-12 border-2 border-[#64ffda] text-[#64ffda] flex items-center justify-center mb-4"
+                whileHover={{ scale: 1.1, rotate: 90 }}
+                transition={{ type: "spring", stiffness: 400, damping: 10 }}
+              >
+                <span className="text-2xl font-bold">A</span>
+              </motion.div>
+            </Link>
+            <p className="text-slate-400 max-w-sm">
+              Building digital experiences that make a difference. Let's create something amazing together.
+            </p>
+          </div>
+
+          {/* Quick Links */}
+          <div className="text-center">
+            <h4 className="text-slate-200 font-mono mb-4">Quick Links</h4>
+            <ul className="space-y-2">
+              {footerLinks.map((link, index) => (
+                <motion.li 
+                  key={index}
+                  whileHover={{ x: 5 }}
+                  transition={{ type: "spring", stiffness: 400 }}
                 >
-                  <span className="text-2xl font-bold">A</span>
-                </motion.div>
-              </Link>
-              <p className="text-slate-400 max-w-sm">
-                Building digital experiences that make a difference. 
-                Let's create something amazing together.
-              </p>
-            </div>
-
-            {/* Quick Links */}
-            <div>
-              <h4 className="text-slate-200 font-mono mb-6">Quick Links</h4>
-              <ul className="space-y-4">
-                {quickLinks.map((link, index) => (
-                  <motion.li 
-                    key={index}
-                    whileHover={{ x: 5 }}
-                    transition={{ type: "spring", stiffness: 400 }}
+                  <Link 
+                    to={link.href}
+                    className="text-slate-400 hover:text-[#64ffda] transition-colors"
                   >
-                    <Link 
-                      to={link.href}
-                      className="text-slate-400 hover:text-[#64ffda] transition-colors"
-                    >
-                      {link.text}
-                    </Link>
-                  </motion.li>
-                ))}
-              </ul>
-            </div>
+                    {link.text}
+                  </Link>
+                </motion.li>
+              ))}
+            </ul>
+          </div>
 
-            {/* Contact Info */}
-            <div>
-              <h4 className="text-slate-200 font-mono mb-6">Contact</h4>
-              <ul className="space-y-4">
-                <li className="text-slate-400">
-                  <a href="mailto:LikhonOfficial@Hotmail.com" 
-                    className="hover:text-[#64ffda] transition-colors">
-                    LikhonOfficial@Hotmail.com
-                  </a>
-                </li>
-                <li className="text-slate-400">San Francisco, CA</li>
-                <li className="text-slate-400">+1 (555) 123-4567</li>
-              </ul>
+          {/* Contact Info */}
+          <div className="text-center md:text-right">
+            <h4 className="text-slate-200 font-mono mb-4">Contact</h4>
+            <div className="space-y-2 text-slate-400">
+              <p>San Francisco, CA</p>
+              <p>LikhonOfficial@Hotmail.com</p>
+              <p>+1 (555) 123-4567</p>
             </div>
           </div>
-        </ScrollReveal>
+        </div>
 
-        {/* Social Links & Copyright */}
-        <ScrollReveal delay={0.3}>
-          <div className="border-t border-slate-800 pt-8">
-            <div className="flex flex-wrap justify-between items-center gap-6">
-              <div className="flex space-x-4">
-                {socialLinks.map((link, index) => (
-                  <motion.a
-                    key={index}
-                    href={link.href}
-                    aria-label={link.label}
-                    className="text-slate-400 hover:text-[#64ffda] transition-colors"
+        {/* Social Links */}
+        <div className="border-t border-slate-800 pt-8">
+          <ul className="flex justify-center space-x-6 mb-8">
+            {links.map((link, index) => (
+              <motion.li
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: index * 0.1 }}
+              >
+                <a
+                  href={link.href}
+                  aria-label={link.label}
+                  className="text-slate-400 hover:text-[#64ffda] transition-all duration-300"
+                >
+                  <motion.i 
+                    className={`ri-${link.icon}-line text-xl`}
                     whileHover={{ y: -4 }}
                     transition={{ type: "spring", stiffness: 400 }}
-                  >
-                    <i className={`ri-${link.icon}-line text-xl`}></i>
-                  </motion.a>
-                ))}
-              </div>
-              <p className="text-slate-400 font-mono text-sm">
-                <span className="text-[#64ffda]">&copy; {currentYear}</span>
-                {" "}Built with{" "}
-                <motion.i 
-                  className="ri-heart-fill mx-1 text-[#64ffda] inline-block"
-                  animate={{ 
-                    scale: [1, 1.2, 1],
-                    rotate: [0, 10, -10, 0]
-                  }}
-                  transition={{ 
-                    duration: 1,
-                    repeat: Infinity,
-                    repeatDelay: 1
-                  }}
-                />
-                {" "}by <span className="text-[#64ffda]">Axtillar</span>
-              </p>
-            </div>
+                  />
+                </a>
+              </motion.li>
+            ))}
+          </ul>
+
+          <div className="text-center">
+            <motion.p 
+              className="text-slate-400 font-mono text-sm"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.5 }}
+            >
+              <span className="text-[#64ffda]">&copy; {currentYear}</span> Built with 
+              <motion.i 
+                className="ri-heart-fill mx-1 text-[#64ffda]"
+                animate={{ 
+                  scale: [1, 1.2, 1],
+                  rotate: [0, 10, -10, 0]
+                }}
+                transition={{ 
+                  duration: 1,
+                  repeat: Infinity,
+                  repeatDelay: 1
+                }}
+              />
+              by <span className="text-[#64ffda]">Axtillar</span>
+            </motion.p>
           </div>
-        </ScrollReveal>
+        </div>
       </div>
     </footer>
   );
