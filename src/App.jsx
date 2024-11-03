@@ -36,12 +36,12 @@ function App() {
   if (loading) return <LoadingScreen />;
 
   return (
-    <div className="min-h-screen bg-[#0a192f] text-white overflow-x-hidden">
+    <div className="min-h-screen bg-[#0a192f] text-white">
       <BrowserRouter>
         <ScrollProgress />
         <ScrollToTop />
         <Navbar />
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-screen-xl relative pt-16 md:pt-0">
+        <div className="px-4 md:px-8 lg:px-16 xl:px-24 relative pt-16 md:pt-0">
           <Suspense fallback={<LoadingScreen />}>
             <Routes>
               <Route path="/" element={<Home />} />
