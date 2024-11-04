@@ -3,6 +3,7 @@ import { useState } from 'react';
 
 function Services() {
   const [activeService, setActiveService] = useState(null);
+  const [showAll, setShowAll] = useState(false);
 
   const services = [
     {
@@ -102,6 +103,8 @@ function Services() {
     }
   };
 
+  const displayedServices = showAll ? services : services.slice(0, 3);
+
   return (
     <motion.div 
       initial={{ opacity: 0 }}
@@ -129,7 +132,7 @@ function Services() {
         animate="visible"
         className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
       >
-        {services.map((service, index) => (
+        {displayedServices.map((service, index) => (
           <motion.div
             key={index}
             variants={itemVariants}
@@ -221,6 +224,29 @@ function Services() {
             </div>
           </motion.div>
         ))}
+      </motion.div>
+
+      {/* Show More Button */}
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.4 }}
+        className="text-center mt-12"
+      >
+        <motion.button
+          onClick={() => setShowAll(!showAll)}
+          className="group relative px-8 py-4 bg-transparent border-2 border-[#64ffda] text-[#64ffda] rounded-lg font-mono text-lg overflow-hidden"
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
+        >
+          <span className="relative z-10 transition-transform duration-300 group-hover:translate-x-1">
+            {showAll ? 'Show Less' : 'Show More'}
+          </span>
+          <div className="absolute inset-0 bg-[#64ffda] transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left" />
+          <span className="absolute inset-0 flex items-center justify-center text-[#0a192f] opacity-0 group-hover:opacity-100 transition-opacity">
+            {showAll ? 'Show Less' : 'Show More'}
+          </span>
+        </motion.button>
       </motion.div>
 
       {/* Contact CTA */}
