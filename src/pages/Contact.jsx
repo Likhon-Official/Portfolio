@@ -16,12 +16,6 @@ function Contact() {
     { value: "consulting", label: "Technical Consulting" }
   ];
 
-  const contactInfo = [
-    { icon: "mail-line", text: "LikhonOfficial@Hotmail.com" },
-    { icon: "phone-line", text: "+1 (555) 123-4567" },
-    { icon: "map-pin-line", text: "San Francisco, CA" }
-  ];
-
   return (
     <motion.div 
       initial={{ opacity: 0 }}
@@ -53,7 +47,7 @@ function Contact() {
           initial={{ opacity: 0, x: -30 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ delay: 0.4 }}
-          className="bg-[#112240] p-6 sm:p-8 rounded-lg order-1"
+          className="bg-[#112240] p-6 sm:p-8 rounded-lg"
         >
           <h3 className="text-xl sm:text-2xl text-slate-200 mb-6">Send Message</h3>
           <form className="space-y-4 sm:space-y-6">
@@ -109,73 +103,29 @@ function Contact() {
           </form>
         </motion.div>
 
-        {/* Contact Information */}
+        {/* Social Links */}
         <motion.div 
           initial={{ opacity: 0, x: 30 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ delay: 0.5 }}
-          className="space-y-6 sm:space-y-8 order-2"
+          className="bg-[#112240] p-6 sm:p-8 rounded-lg flex flex-col justify-center"
         >
-          {/* Contact Details */}
-          <div className="bg-[#112240] p-6 sm:p-8 rounded-lg">
-            <h3 className="text-xl sm:text-2xl text-slate-200 mb-6">Contact Information</h3>
-            <div className="grid sm:grid-cols-2 lg:grid-cols-1 gap-6">
-              {contactInfo.map((info, index) => (
-                <div key={index} className="flex items-center space-x-4 group">
-                  <div className="w-12 h-12 rounded-lg bg-[#64ffda]/10 flex items-center justify-center group-hover:bg-[#64ffda]/20 transition-colors">
-                    <i className={`ri-${info.icon} text-xl text-[#64ffda]`}></i>
-                  </div>
-                  <div className="flex-1">
-                    <span className="text-slate-400 group-hover:text-slate-300 transition-colors text-base break-all">
-                      {info.text}
-                    </span>
-                  </div>
-                </div>
-              ))}
-            </div>
+          <h3 className="text-xl sm:text-2xl text-slate-200 mb-8">Connect With Me</h3>
+          <div className="grid grid-cols-4 gap-6">
+            {['github', 'linkedin', 'twitter', 'instagram'].map((platform, index) => (
+              <motion.a
+                key={index}
+                href="#"
+                whileHover={{ y: -4 }}
+                className="w-12 h-12 rounded-lg bg-[#64ffda]/10 flex items-center justify-center hover:bg-[#64ffda]/20 transition-colors mx-auto"
+              >
+                <i className={`ri-${platform}-line text-xl text-[#64ffda]`}></i>
+              </motion.a>
+            ))}
           </div>
-
-          {/* Business Hours */}
-          <div className="bg-[#112240] p-6 sm:p-8 rounded-lg">
-            <h3 className="text-xl sm:text-2xl text-slate-200 mb-6">Business Hours</h3>
-            <div className="grid sm:grid-cols-2 lg:grid-cols-1 gap-4">
-              <div className="flex justify-between items-center group">
-                <span className="text-slate-400 group-hover:text-slate-300 transition-colors text-base">
-                  Monday - Friday
-                </span>
-                <span className="text-[#64ffda] text-base">9 AM - 6 PM</span>
-              </div>
-              <div className="flex justify-between items-center group">
-                <span className="text-slate-400 group-hover:text-slate-300 transition-colors text-base">
-                  Saturday
-                </span>
-                <span className="text-[#64ffda] text-base">10 AM - 4 PM</span>
-              </div>
-              <div className="flex justify-between items-center group">
-                <span className="text-slate-400 group-hover:text-slate-300 transition-colors text-base">
-                  Sunday
-                </span>
-                <span className="text-[#64ffda] text-base">Closed</span>
-              </div>
-            </div>
-          </div>
-
-          {/* Social Links */}
-          <div className="bg-[#112240] p-6 sm:p-8 rounded-lg">
-            <h3 className="text-xl sm:text-2xl text-slate-200 mb-6">Follow Me</h3>
-            <div className="grid grid-cols-4 sm:grid-cols-4 gap-4">
-              {['github', 'linkedin', 'twitter', 'instagram'].map((platform, index) => (
-                <motion.a
-                  key={index}
-                  href="#"
-                  whileHover={{ y: -4 }}
-                  className="w-12 h-12 rounded-lg bg-[#64ffda]/10 flex items-center justify-center hover:bg-[#64ffda]/20 transition-colors mx-auto"
-                >
-                  <i className={`ri-${platform}-line text-xl text-[#64ffda]`}></i>
-                </motion.a>
-              ))}
-            </div>
-          </div>
+          <p className="text-slate-400 text-center mt-8">
+            Let's connect and discuss how we can work together to bring your ideas to life.
+          </p>
         </motion.div>
       </div>
     </motion.div>
