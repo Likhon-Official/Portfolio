@@ -96,7 +96,7 @@ function Resume() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2 }}
         >
-          <h1 className="text-[#64ffda] font-mono mb-4">03. Professional Journey</h1>
+          <h1 className="text-[#64ffda] font-mono mb-4">03.</h1>
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-200 mb-6">My Resume</h2>
           <p className="text-lg text-slate-400 max-w-2xl mx-auto px-4">
             A showcase of my professional experience, technical skills, and achievements
