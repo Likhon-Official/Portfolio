@@ -22,13 +22,7 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="relative pt-24 pb-12 overflow-hidden">
-      {/* Decorative Elements */}
-      <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute -right-64 -bottom-64 w-96 h-96 rounded-full bg-[#64ffda]/5"></div>
-        <div className="absolute -left-64 -bottom-32 w-96 h-96 rounded-full bg-[#64ffda]/3"></div>
-      </div>
-
+    <footer className="relative pt-24 pb-12">
       {location.pathname !== '/contact' && (
         <motion.div 
           className="max-w-3xl mx-auto text-center mb-20 px-6"
@@ -44,14 +38,16 @@ const Footer = () => {
           </p>
           <Link to="/contact">
             <motion.button 
-              className="px-8 py-4 bg-transparent border-2 border-[#64ffda] text-[#64ffda] rounded-lg font-mono text-lg relative group overflow-hidden"
+              className="group relative inline-flex items-center gap-2 px-8 py-4 bg-transparent border-2 border-[#64ffda] text-[#64ffda] rounded-lg font-mono text-lg overflow-hidden"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              <span className="relative z-10">Say Hello</span>
+              <span className="relative z-10 transition-transform duration-300 group-hover:translate-x-1">Say Hello</span>
+              <i className="ri-send-plane-line relative z-10 transition-transform duration-300 group-hover:translate-x-2"></i>
               <div className="absolute inset-0 bg-[#64ffda] transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></div>
-              <span className="absolute inset-0 flex items-center justify-center text-[#0a192f] opacity-0 group-hover:opacity-100 transition-opacity">
-                Say Hello
+              <span className="absolute inset-0 flex items-center justify-center gap-2 text-[#0a192f] opacity-0 group-hover:opacity-100 transition-opacity">
+                <span>Say Hello</span>
+                <i className="ri-send-plane-line"></i>
               </span>
             </motion.button>
           </Link>
@@ -59,7 +55,7 @@ const Footer = () => {
       )}
 
       <div className="max-w-6xl mx-auto px-6">
-        <div className="grid md:grid-cols-3 gap-12 mb-12 relative">
+        <div className="grid md:grid-cols-3 gap-12 mb-12">
           {/* Brand Section */}
           <div className="text-center md:text-left">
             <Link to="/" className="inline-block">
