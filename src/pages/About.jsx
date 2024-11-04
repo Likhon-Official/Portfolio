@@ -59,22 +59,20 @@ function About() {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.6 }}
-      className="max-w-6xl mx-auto pt-32 pb-24 px-4 sm:px-6 lg:px-8"
+      className="max-w-6xl mx-auto pt-32 pb-24"
     >
-      {/* Header */}
-      <motion.div 
-        className="text-center mb-16"
-        variants={containerVariants}
-        initial="hidden"
-        animate="visible"
-      >
-        <motion.p variants={itemVariants} className="text-[#64ffda] font-mono mb-4">
-          04. About Me
-        </motion.p>
-        <motion.h1 variants={itemVariants} className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-200 mb-6">
-          Know Who I Am
-        </motion.h1>
-      </motion.div>
+      <header className="text-center mb-16">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.2 }}
+        >
+          <h1 className="text-[#64ffda] font-mono mb-4">04. About Me</h1>
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-200 mb-6">
+            Know Who I Am
+          </h2>
+        </motion.div>
+      </header>
 
       {/* Story Section */}
       <motion.div 
