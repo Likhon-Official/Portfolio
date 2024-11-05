@@ -105,7 +105,7 @@ function About() {
           <div className="relative group">
             <div className="relative z-10 rounded-2xl overflow-hidden bg-[#64ffda]/10 p-2">
               <img
-                src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?fit=crop&w=800&h=800&q=80"
+                src="https://i.postimg.cc/mDKYm40Y/LikHoN.jpg"
                 alt="Profile"
                 className="w-full h-full object-cover rounded-xl transition-all duration-500 
                   filter grayscale hover:grayscale-0 hover:scale-105"
