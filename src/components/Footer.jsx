@@ -7,8 +7,8 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   const links = [
-    { icon: "github", href: "#", label: "GitHub" },
-    { icon: "instagram", href: "#", label: "Instagram" },
+    { icon: "github", href: "https://github.com/Axtillar", label: "GitHub" },
+    { icon: "instagram", href: "https://www.instagram.com/axtillar", label: "Instagram" },
     { icon: "twitter", href: "#", label: "Twitter" },
     { icon: "linkedin", href: "#", label: "LinkedIn" },
     { icon: "dribbble", href: "#", label: "Dribbble" }
