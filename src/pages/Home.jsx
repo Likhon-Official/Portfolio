@@ -22,7 +22,7 @@ const Home = () => {
   };
 
   const stats = [
-    { number: "12+", text: "Years Experience" },
+    { number: "5+", text: "Years Experience" },
     { number: "120+", text: "Projects Completed" },
     { number: "50+", text: "Happy Clients" },
     { number: "10+", text: "Awards Won" }
