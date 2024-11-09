@@ -8,13 +8,13 @@ function Resume() {
     {
       role: "Advanced Software Engineering",
       company: "Walmart USA",
-      period: "2021 - Present",
-      location: "Mountain View, CA",
-      description: "Completed the Advanced Software Engineering Job Simulation where I solved difficult technical projects for a variety of teams at Walmart.",
+      period: "2023 - Present",
+      location: "United States",
+      description: "Completed the Advanced Software Engineering Job Simulation.",
       achievements: [
-        "Developed a novel version of a heap data structure in Java for Walmart’s shipping department, showcasing strong problem-solving and algorithmic skills.",
-        "Designed a UML class diagram for a data processor, considering different operating modes and database connections.",
-        "Created an entity relationship diagram to design a new database accounting for all requirements provided by Walmart’s pet department.",
+        "Developed a novel version of a heap data structure in Java for Walmart’s shipping department.",
+        "Designed a UML class diagram for a data processor.",
+        "Created an entity relationship diagram to design a new database.",
       ],
       tech: ["Go", "Kubernetes", "TensorFlow", "BigQuery"]
     },
