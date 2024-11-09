@@ -15,9 +15,6 @@ function Resume() {
         "Developed a novel version of a heap data structure in Java for Walmart’s shipping department.",
         "Designed a UML class diagram for a data processor.",
         "Created an entity relationship diagram to design a new database.",
-       <p>Check out <a href="https://www.example.com" target="_blank">this website</a> for more information.</p>
-
-
       ],
       tech: ["Java", "Python", "SQL", "UML"]
     },
