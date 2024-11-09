@@ -9,9 +9,9 @@ const Footer = () => {
   const links = [
     { icon: "github", href: "https://github.com/Axtillar", label: "GitHub" },
     { icon: "instagram", href: "https://www.instagram.com/axtillar", label: "Instagram" },
-    { icon: "twitter", href: "#", label: "Twitter" },
-    { icon: "linkedin", href: "#", label: "LinkedIn" },
-    { icon: "dribbble", href: "#", label: "Dribbble" }
+    { icon: "twitter", href: "https://x.com/Axtillar", label: "Twitter" },
+    { icon: "linkedin", href: "https://www.linkedin.com/in/axtillar", label: "Linkedin" },
+    { icon: "dribbble", href: "https://dribbble.com/Axtillar", label: "Dribbble" }
   ];
 
   const footerLinks = [
@@ -97,9 +97,9 @@ const Footer = () => {
           <div className="text-center md:text-right">
             <h4 className="text-slate-200 font-mono mb-4">Contact</h4>
             <div className="space-y-2 text-slate-400">
-              <p>San Francisco, CA</p>
+              <p>Cumilla, Bangladesh</p>
               <p>LikhonOfficial@Hotmail.com</p>
-              <p>+1 (555) 123-4567</p>
+              <p>+880 9611-530351</p>
             </div>
           </div>
         </div>
@@ -149,7 +149,7 @@ const Footer = () => {
                   repeatDelay: 1
                 }}
               />
-              by <span className="text-[#64ffda]">Axtillar</span>
+              by <span className="text-[#64ffda]">Lik Ho N!</span>
             </motion.p>
           </div>
         </div>
