@@ -22,7 +22,7 @@ const Home = () => {
   };
 
   const stats = [
-    { number: "5+", text: "Years Experience" },
+    { number: "05+", text: "Years Experience" },
     { number: "120+", text: "Projects Completed" },
     { number: "50+", text: "Happy Clients" },
     { number: "10+", text: "Awards Won" }
@@ -42,7 +42,7 @@ const Home = () => {
               className="text-[#64ffda] font-mono text-base md:text-lg"
               variants={itemVariants}
             >
-              Hi there! I'm
+              Hi there! I'm [ Axtillar.]
             </motion.p>
             
             <motion.h1 
@@ -59,7 +59,7 @@ const Home = () => {
             >
               <TypeAnimation
                 sequence={[
-                  'Full Stack Developer',
+                  'Web Developer',
                   2000,
                   'UI/UX Designer',
                   2000,
