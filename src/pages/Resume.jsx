@@ -6,7 +6,7 @@ function Resume() {
 
   const experiences = [
     {
-      role: "Advanced Software Engineering",
+      role: "Software Engineering",
       company: "Walmart USA",
       period: " September 13th,	2024",
       location: "United States",
