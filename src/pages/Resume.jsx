@@ -6,16 +6,15 @@ function Resume() {
 
   const experiences = [
     {
-      role: "Senior Software Engineer",
-      company: "Google",
+      role: "Advanced Software Engineering",
+      company: "Walmart USA",
       period: "2021 - Present",
       location: "Mountain View, CA",
-      description: "Led development of core search infrastructure components",
+      description: "Completed the Advanced Software Engineering Job Simulation where I solved difficult technical projects for a variety of teams at Walmart.",
       achievements: [
-        "Improved search latency by 35% through optimization of backend algorithms",
-        "Led a team of 5 engineers in redesigning the search indexing pipeline",
-        "Implemented real-time search suggestions using ML models",
-        "Reduced infrastructure costs by 25% through efficient resource utilization"
+        "Developed a novel version of a heap data structure in Java for Walmart’s shipping department, showcasing strong problem-solving and algorithmic skills.",
+        "Designed a UML class diagram for a data processor, considering different operating modes and database connections.",
+        "Created an entity relationship diagram to design a new database accounting for all requirements provided by Walmart’s pet department.",
       ],
       tech: ["Go", "Kubernetes", "TensorFlow", "BigQuery"]
     },
