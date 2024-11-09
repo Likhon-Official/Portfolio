@@ -8,7 +8,7 @@ function Resume() {
     {
       role: "Advanced Software Engineering",
       company: "Walmart USA",
-      period: "2023 - Present",
+      period: " September 13th,	2024",
       location: "United States",
       description: "Completed the Advanced Software Engineering Job Simulation.",
       achievements: [
@@ -16,7 +16,7 @@ function Resume() {
         "Designed a UML class diagram for a data processor.",
         "Created an entity relationship diagram to design a new database.",
       ],
-      tech: ["Go", "Kubernetes", "TensorFlow", "BigQuery"]
+      tech: ["Java", "Python", "SQL", "UML"]
     },
     {
       role: "Full Stack Developer",
