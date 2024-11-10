@@ -8,13 +8,15 @@ function Resume() {
     {
       role: "Software Engineering",
       company: "Walmart USA",
-      period: " September 13th,	2024",
+      period: "September 13th, 2024",
       location: "United States",
       description: "Completed the Advanced Software Engineering Job Simulation.",
+      certificate: "https://1drv.ms/b/c/5ae6457fb63ca7f2/EfKnPLZ_ReYggFrbAAAAAAABW1V6DuxL52CBTL8kzAlzgA",
       achievements: [
-        "Developed a novel version of a heap data structure in Java for Walmart’s shipping department.",
+        "Developed a novel version of a heap data structure in Java for Walmart's shipping department.",
         "Designed a UML class diagram for a data processor.",
         "Created an entity relationship diagram to design a new database.",
+        "Implemented efficient algorithms for data processing"
       ],
       tech: ["Java", "Python", "SQL", "UML"]
     },
@@ -24,6 +26,7 @@ function Resume() {
       period: "2019 - 2021",
       location: "Seattle, WA",
       description: "Developed features for Microsoft Teams",
+      certificate: "https://example.com/microsoft-certificate",
       achievements: [
         "Built real-time collaboration features used by 1M+ users",
         "Reduced application bundle size by 40% through code splitting",
@@ -144,7 +147,7 @@ function Resume() {
                 </div>
               </div>
               <p className="text-slate-400 mb-4">{exp.description}</p>
-              <ul className="space-y-2 mb-4">
+              <ul className="space-y-2 mb-6">
                 {exp.achievements.map((achievement, i) => (
                   <li key={i} className="flex text-slate-400">
                     <span className="text-[#64ffda] mr-2">▹</span>
@@ -152,7 +155,7 @@ function Resume() {
                   </li>
                 ))}
               </ul>
-              <div className="flex flex-wrap gap-2">
+              <div className="flex flex-wrap gap-2 mb-6">
                 {exp.tech.map((tech, i) => (
                   <span
                     key={i}
@@ -162,6 +165,17 @@ function Resume() {
                   </span>
                 ))}
               </div>
+              <motion.a
+                href={exp.certificate}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center px-4 py-2 bg-[#64ffda]/10 text-[#64ffda] rounded-lg font-mono text-sm hover:bg-[#64ffda]/20 transition-all duration-300"
+                whileHover={{ y: -2 }}
+                whileTap={{ y: 0 }}
+              >
+                <i className="ri-award-line mr-2"></i>
+                View Certificate
+              </motion.a>
             </motion.div>
           ))}
         </div>
