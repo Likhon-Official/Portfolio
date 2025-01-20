@@ -18,7 +18,7 @@ function Work() {
       }
     },
     {
-      title: "VS Code Theme,
+      title: "VS Code Theme",
       description: "A minimal, dark blue theme for VS Code, Sublime Text, Atom, iTerm, and more. Available on Visual Studio Marketplace.",
       image: "https://lightrun.com/wp-content/uploads/2021/11/Lightrun-Hero-banner-Top-5-VS-Code-Themes-01-scaled.jpg",
       technologies: ["VS Code", "Sublime Text", "Atom", "iTerm2"],
