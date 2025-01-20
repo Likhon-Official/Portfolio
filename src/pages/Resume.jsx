@@ -11,7 +11,7 @@ function Resume() {
       period: "September 13th, 2024",
       location: "United States",
       description: "Completed the Advanced Software Engineering Job Simulation.",
-      certificate: "https://1drv.ms/b/c/5ae6457fb63ca7f2/EfKnPLZ_ReYggFrbAAAAAAABW1V6DuxL52CBTL8kzAlzgA",
+      certificate: "https://drive.google.com/file/d/1-KwjWE7ZS_o7xnufXf9KQqmUDzkGteCw/view?usp=sharing",
       achievements: [
         "Developed a novel version of a heap data structure in Java for Walmart's shipping department.",
         "Designed a UML class diagram for a data processor.",
