@@ -111,7 +111,7 @@ const Home = () => {
           <div className="relative w-full max-w-sm lg:max-w-md">
             <div className="relative z-10 rounded-2xl overflow-hidden aspect-square bg-[#64ffda]/10 p-2">
               <img
-                src="https://i.postimg.cc/Dft6gQT9/me.jpg"
+                src="https://i.postimg.cc/HxYf1Kx9/Picsart-25-01-16-23-20-18-818-5.jpg"
                 alt="LikHon Das"
                 className="w-full h-full object-cover rounded-xl transition-all duration-500 
                   filter grayscale hover:grayscale-0 hover:scale-105"
