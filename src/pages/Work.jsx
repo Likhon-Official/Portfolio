@@ -18,9 +18,9 @@ function Work() {
       }
     },
     {
-      title: "Halcyon Theme",
+      title: "VS Code Theme,
       description: "A minimal, dark blue theme for VS Code, Sublime Text, Atom, iTerm, and more. Available on Visual Studio Marketplace.",
-      image: "https://raw.githubusercontent.com/bchiang7/v4/main/src/images/halcyon.png",
+      image: "https://lightrun.com/wp-content/uploads/2021/11/Lightrun-Hero-banner-Top-5-VS-Code-Themes-01-scaled.jpg",
       technologies: ["VS Code", "Sublime Text", "Atom", "iTerm2"],
       category: "tools",
       links: {
@@ -31,7 +31,7 @@ function Work() {
     {
       title: "Built with Next.js",
       description: "A collection of open source projects built with Next.js, curated by the community. Submit your own project to be featured!",
-      image: "https://raw.githubusercontent.com/bchiang7/v4/main/src/images/nextjs.png",
+      image: "https://sanet.pics/storage-8/0822/fjDnpM87ZsJ3o61sv4JB8yHM4KPQMSar.jpg",
       technologies: ["Next.js", "TypeScript", "MDX", "Tailwind CSS"],
       category: "web",
       links: {
@@ -42,7 +42,7 @@ function Work() {
     {
       title: "AI Image Generator",
       description: "An advanced AI-powered image generation platform using state-of-the-art machine learning models to create unique artwork.",
-      image: "https://images.unsplash.com/photo-1547954575-855750c57bd3",
+      image: "https://s.tmimgcdn.com/scr/800x500/351400/textopic-ai-text-to-image-generator-html-website-template_351409-original.png",
       technologies: ["Python", "TensorFlow", "React", "Flask"],
       category: "ai",
       links: {
