@@ -53,7 +53,7 @@ function Work() {
     {
       title: "Crypto Dashboard",
       description: "Real-time cryptocurrency tracking dashboard with advanced analytics and portfolio management features.",
-      image: "https://images.unsplash.com/photo-1621761191319-c6fb62004040",
+      image: "https://cdn.dribbble.com/users/5029699/screenshots/15747468/media/e0adcb81f7bcd298136f425a6580de31.png",
       technologies: ["Vue.js", "Node.js", "WebSocket", "D3.js"],
       category: "web",
       links: {
