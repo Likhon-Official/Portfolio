@@ -261,7 +261,7 @@ function Services() {
           Let's discuss how we can help bring your ideas to life with tailored solutions that meet your specific needs.
         </p>
         <motion.a
-          href="/contact"
+          href="https://axtillar.netlify.app/contact"
           className="inline-flex items-center px-8 py-4 bg-[#64ffda] text-[#0a192f] rounded-lg font-semibold hover:bg-[#64ffda]/90 transition-colors"
           whileHover={{ y: -4 }}
           whileTap={{ y: 0 }}
