@@ -7,9 +7,9 @@ function Work() {
 
   const projects = [
     {
-      title: "Spotify Profile",
-      description: "A web app for visualizing personalized Spotify data. View your top artists, top tracks, recently played tracks, and detailed audio information about each track.",
-      image: "https://raw.githubusercontent.com/bchiang7/v4/main/src/images/demo.png",
+      title: "Web Music Player",
+      description: "A web app for View your top artists, top tracks, recently played tracks, and detailed audio information about each track.",
+      image: "https://cdn.dribbble.com/users/5468574/screenshots/14240780/media/d91965cf71ab1bd58b223357c3bd56d8.png?compress=1&resize=1200x900",
       technologies: ["React", "Express", "Spotify API", "Styled Components"],
       category: "web",
       links: {
