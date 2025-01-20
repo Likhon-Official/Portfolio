@@ -246,7 +246,7 @@ function Resume() {
         transition={{ delay: 0.5 }}
       >
         <a
-          href="#"
+          href="https://drive.google.com/file/d/1-CNF8sR9j0RBKLK8l3Kq74lwEcb52EJJ/view?usp=sharing"
           className="inline-flex items-center px-8 py-4 bg-[#64ffda] text-[#0a192f] rounded-lg font-mono text-lg font-semibold hover:bg-[#64ffda]/90 transition-colors"
         >
           <i className="ri-download-line mr-2"></i>
