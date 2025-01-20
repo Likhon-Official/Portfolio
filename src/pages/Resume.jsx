@@ -70,7 +70,6 @@ function Resume() {
       issuer: "Amazon Web Services",
       date: "2023",
       icon: "amazon-line"
-      certificate: "https://drive.google.com/file/d/1-KwjWE7ZS_o7xnufXf9KQqmUDzkGteCw/view?usp=sharing"
     },
     {
       name: "Google Cloud Professional",
