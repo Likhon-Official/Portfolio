@@ -3,6 +3,7 @@ import { useState } from 'react';
 
 function Resume() {
   const [activeTab, setActiveTab] = useState('experience');
+  const [showAllCerts, setShowAllCerts] = useState(false);
 
   const experiences = [
     {
@@ -69,21 +70,68 @@ function Resume() {
       name: "AWS Solutions Architect",
       issuer: "Amazon Web Services",
       date: "2023",
-      icon: "amazon-line"
+      icon: "amazon-line",
+      certificate: "https://www.credly.com/badges/aws-certified-solutions-architect"
     },
     {
       name: "Google Cloud Professional",
       issuer: "Google",
       date: "2022",
-      icon: "google-line"
+      icon: "google-line",
+      certificate: "https://www.credential.net/google-cloud-professional"
     },
     {
       name: "MongoDB Developer",
       issuer: "MongoDB University",
       date: "2022",
-      icon: "database-2-line"
+      icon: "database-2-line",
+      certificate: "https://university.mongodb.com/certification/developer"
+    },
+    {
+      name: "Microsoft Azure Developer",
+      issuer: "Microsoft",
+      date: "2023",
+      icon: "microsoft-line",
+      certificate: "https://learn.microsoft.com/azure-developer"
+    },
+    {
+      name: "Kubernetes Administrator",
+      issuer: "Linux Foundation",
+      date: "2023",
+      icon: "terminal-box-line",
+      certificate: "https://training.linuxfoundation.org/certification/cka"
+    },
+    {
+      name: "React Developer",
+      issuer: "Meta",
+      date: "2023",
+      icon: "reactjs-line",
+      certificate: "https://www.coursera.org/meta-react-developer"
+    },
+    {
+      name: "Python Professional",
+      issuer: "Python Institute",
+      date: "2022",
+      icon: "python-line",
+      certificate: "https://pythoninstitute.org/certification"
+    },
+    {
+      name: "Cybersecurity Specialist",
+      issuer: "CompTIA",
+      date: "2023",
+      icon: "shield-keyhole-line",
+      certificate: "https://www.comptia.org/certifications/security"
+    },
+    {
+      name: "Data Science Professional",
+      issuer: "IBM",
+      date: "2023",
+      icon: "bar-chart-box-line",
+      certificate: "https://www.ibm.com/training/certification/data-science"
     }
   ];
+
+  const displayedCertifications = showAllCerts ? certifications : certifications.slice(0, 3);
 
   return (
     <motion.div 
@@ -218,24 +266,60 @@ function Resume() {
 
       {/* Certifications Section */}
       {activeTab === 'certifications' && (
-        <div className="grid md:grid-cols-3 gap-6">
-          {certifications.map((cert, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: index * 0.1 }}
-              className="bg-[#112240] rounded-lg p-6 hover:shadow-lg transition-all duration-300 group"
+        <>
+          <div className="grid md:grid-cols-3 gap-6">
+            {displayedCertifications.map((cert, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: index * 0.1 }}
+                className="bg-[#112240] rounded-lg p-6 hover:shadow-lg transition-all duration-300 group"
+              >
+                <div className="w-12 h-12 rounded-lg bg-[#64ffda]/10 flex items-center justify-center mb-4 group-hover:bg-[#64ffda]/20 transition-colors">
+                  <i className={`ri-${cert.icon} text-2xl text-[#64ffda]`}></i>
+                </div>
+                <h3 className="text-lg text-slate-200 font-bold mb-2">{cert.name}</h3>
+                <p className="text-[#64ffda] font-mono text-sm mb-1">{cert.issuer}</p>
+                <p className="text-slate-400 text-sm mb-4">{cert.date}</p>
+                <motion.a
+                  href={cert.certificate}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center px-4 py-2 bg-[#64ffda]/10 text-[#64ffda] rounded-lg font-mono text-sm hover:bg-[#64ffda]/20 transition-all duration-300"
+                  whileHover={{ y: -2 }}
+                  whileTap={{ y: 0 }}
+                >
+                  <i className="ri-award-line mr-2"></i>
+                  View Certificate
+                </motion.a>
+              </motion.div>
+            ))}
+          </div>
+          {certifications.length > 3 && (
+            <motion.div 
+              className="mt-8 text-center"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.4 }}
             >
-              <div className="w-12 h-12 rounded-lg bg-[#64ffda]/10 flex items-center justify-center mb-4 group-hover:bg-[#64ffda]/20 transition-colors">
-                <i className={`ri-${cert.icon} text-2xl text-[#64ffda]`}></i>
-              </div>
-              <h3 className="text-lg text-slate-200 font-bold mb-2">{cert.name}</h3>
-              <p className="text-[#64ffda] font-mono text-sm mb-1">{cert.issuer}</p>
-              <p className="text-slate-400 text-sm">{cert.date}</p>
+              <motion.button
+                onClick={() => setShowAllCerts(!showAllCerts)}
+                className="group relative px-8 py-4 bg-transparent border-2 border-[#64ffda] text-[#64ffda] rounded-lg font-mono text-lg overflow-hidden"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                <span className="relative z-10 transition-transform duration-300 group-hover:translate-x-1">
+                  {showAllCerts ? 'Show Less' : 'Show More'}
+                </span>
+                <div className="absolute inset-0 bg-[#64ffda] transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left" />
+                <span className="absolute inset-0 flex items-center justify-center text-[#0a192f] opacity-0 group-hover:opacity-100 transition-opacity">
+                  {showAllCerts ? 'Show Less' : 'Show More'}
+                </span>
+              </motion.button>
             </motion.div>
-          ))}
-        </div>
+          )}
+        </>
       )}
 
       {/* Download Resume Button */}
