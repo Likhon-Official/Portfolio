@@ -62,9 +62,10 @@ const Footer = () => {
         transition={{ duration: 0.6, delay: 0.2 }}
       >
         <h2 className="text-[#64ffda] font-mono mb-4 text-lg">Discover My Shop</h2>
-        <h3 className="text-3xl md:text-4xl font-bold text-slate-200 mb-6">Exclusive Digital Products</h3>
+        <h3 className="text-3xl md:text-4xl font-bold text-slate-200 mb-6">Exclusive Products</h3>
         <p className="text-lg text-slate-400 mb-8 max-w-2xl mx-auto">
-          Explore my collection of premium digital assets, templates, and tools designed to elevate your projects.
+       Explore my exclusive collection of premium products, Shop now and experience the best in every purchase.
+       
         </p>
         <a 
           href="https://axtillar.myspreadshop.com" 
