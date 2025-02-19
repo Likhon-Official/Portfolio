@@ -10,7 +10,7 @@ const Footer = () => {
     { icon: "github", href: "https://github.com/Axtillar", label: "GitHub" },
     { icon: "instagram", href: "https://www.instagram.com/axtillar", label: "Instagram" },
     { icon: "twitter", href: "https://x.com/Axtillar", label: "Twitter" },
-    { icon: "linkedin", href: "https://www.linkedin.com/in/axtillar", label: "Linkedin" },
+    { icon: "linkedin", href: "https://www.linkedin.com/in/axtillar", label: "LinkedIn" },
     { icon: "dribbble", href: "https://dribbble.com/Axtillar", label: "Dribbble" }
   ];
 
@@ -53,6 +53,39 @@ const Footer = () => {
           </Link>
         </motion.div>
       )}
+
+      {/* Shop Section */}
+      <motion.div 
+        className="max-w-3xl mx-auto text-center mb-20 px-6"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, delay: 0.2 }}
+      >
+        <h2 className="text-[#64ffda] font-mono mb-4 text-lg">Discover My Shop</h2>
+        <h3 className="text-3xl md:text-4xl font-bold text-slate-200 mb-6">Exclusive Digital Products</h3>
+        <p className="text-lg text-slate-400 mb-8 max-w-2xl mx-auto">
+          Explore my collection of premium digital assets, templates, and tools designed to elevate your projects.
+        </p>
+        <a 
+          href="https://shop.axtillar.com" 
+          target="_blank" 
+          rel="noopener noreferrer"
+        >
+          <motion.button 
+            className="group relative inline-flex items-center gap-2 px-8 py-4 bg-[#64ffda] text-[#0a192f] rounded-lg font-mono text-lg overflow-hidden"
+            whileHover={{ scale: 1.05, y: -4 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            <span className="relative z-10">Visit Shop</span>
+            <i className="ri-shopping-bag-line relative z-10"></i>
+            <div className="absolute inset-0 bg-[#0a192f] transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></div>
+            <span className="absolute inset-0 flex items-center justify-center gap-2 text-[#64ffda] opacity-0 group-hover:opacity-100 transition-opacity">
+              <span>Visit Shop</span>
+              <i className="ri-shopping-bag-line"></i>
+            </span>
+          </motion.button>
+        </a>
+      </motion.div>
 
       <div className="max-w-6xl mx-auto px-6">
         <div className="grid md:grid-cols-3 gap-12 mb-12">
