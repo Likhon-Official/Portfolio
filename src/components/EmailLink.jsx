@@ -10,7 +10,7 @@ function EmailLink() {
     >
       <div className="flex flex-col items-center space-y-6 after:content-[''] after:block after:w-px after:h-24 after:bg-slate-400 after:mt-6">
         <a
-          href="mailto:brittany.chiang@gmail.com"
+          href="mailto:LikhonOffiicial@gmail.com"
           className="font-mono text-sm text-slate-400 hover:text-[#64ffda] hover:-translate-y-1 transition-all duration-200 vertical-rl"
           style={{ writingMode: 'vertical-rl' }}
         >
