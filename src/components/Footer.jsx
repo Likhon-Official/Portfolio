@@ -67,7 +67,7 @@ const Footer = () => {
           Explore my collection of premium digital assets, templates, and tools designed to elevate your projects.
         </p>
         <a 
-          href="https://shop.axtillar.com" 
+          href="https://axtillar.myspreadshop.com" 
           target="_blank" 
           rel="noopener noreferrer"
         >
