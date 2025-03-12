@@ -16,6 +16,25 @@ function Contact() {
     { value: "consulting", label: "Technical Consulting" }
   ];
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    
+    // Create email content
+    const subject = `Project Inquiry: ${formState.service}`;
+    const body = `Name: ${formState.name}
+Email: ${formState.email}
+Service: ${formState.service}
+
+Message:
+${formState.message}`;
+
+    // Create mailto URL
+    const mailtoUrl = `mailto:LikhonOfficial@Hotmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    
+    // Open email client
+    window.location.href = mailtoUrl;
+  };
+
   return (
     <motion.div 
       initial={{ opacity: 0 }}
@@ -50,7 +69,7 @@ function Contact() {
           className="bg-[#112240] p-6 sm:p-8 rounded-lg"
         >
           <h3 className="text-xl sm:text-2xl text-slate-200 mb-6">Send Message</h3>
-          <form className="space-y-4 sm:space-y-6">
+          <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
             <div className="grid sm:grid-cols-2 gap-4">
               <div>
                 <input
@@ -59,6 +78,7 @@ function Contact() {
                   value={formState.name}
                   onChange={(e) => setFormState({ ...formState, name: e.target.value })}
                   className="w-full bg-[#0a192f] text-slate-200 px-4 py-3 rounded-lg border-2 border-slate-700 focus:border-[#64ffda] outline-none transition-colors text-base"
+                  required
                 />
               </div>
               <div>
@@ -68,6 +88,7 @@ function Contact() {
                   value={formState.email}
                   onChange={(e) => setFormState({ ...formState, email: e.target.value })}
                   className="w-full bg-[#0a192f] text-slate-200 px-4 py-3 rounded-lg border-2 border-slate-700 focus:border-[#64ffda] outline-none transition-colors text-base"
+                  required
                 />
               </div>
             </div>
@@ -76,6 +97,7 @@ function Contact() {
                 value={formState.service}
                 onChange={(e) => setFormState({ ...formState, service: e.target.value })}
                 className="w-full bg-[#0a192f] text-slate-200 px-4 py-3 rounded-lg border-2 border-slate-700 focus:border-[#64ffda] outline-none transition-colors text-base"
+                required
               >
                 <option value="">Select Service</option>
                 {services.map((service) => (
@@ -92,9 +114,11 @@ function Contact() {
                 value={formState.message}
                 onChange={(e) => setFormState({ ...formState, message: e.target.value })}
                 className="w-full bg-[#0a192f] text-slate-200 px-4 py-3 rounded-lg border-2 border-slate-700 focus:border-[#64ffda] outline-none resize-none transition-colors text-base"
+                required
               ></textarea>
             </div>
             <motion.button 
+              type="submit"
               whileHover={{ y: -4 }}
               className="w-full bg-[#64ffda] text-[#0a192f] py-3 sm:py-4 rounded-lg font-semibold hover:bg-[#64ffda]/90 transition-colors text-base"
             >
