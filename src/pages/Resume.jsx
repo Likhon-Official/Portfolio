@@ -12,7 +12,7 @@ function Resume() {
       period: "September 13th, 2024",
       location: "United States",
       description: "Completed the Advanced Software Engineering Job Simulation.",
-      certificate: "https://drive.google.com/file/d/1-KwjWE7ZS_o7xnufXf9KQqmUDzkGteCw/view?usp=sharing",
+      certificate: "https://drive.google.com/file/d/17o1vgF-ZRqI0QiKhvv7L78BKTdaeafqI/view?usp=sharing",
       achievements: [
         "Developed a novel version of a heap data structure in Java for Walmart's shipping department.",
         "Designed a UML class diagram for a data processor.",
@@ -27,7 +27,7 @@ function Resume() {
       period: "September 14th, 2024",
       location: "United States",
       description: "Enhanced Citi’s loan management system and stock market risk reporting.",
-      certificate: "https://example.com/microsoft-certificate",
+      certificate: "https://drive.google.com/file/d/1-uV2VYQ28QweDXNjNfLUTeHc-qxl3uK1/view?usp=sharing",
       achievements: [
         "Designed UML state diagram for the loan process.",
         "Researched ML systems for credit risk assessment.",
