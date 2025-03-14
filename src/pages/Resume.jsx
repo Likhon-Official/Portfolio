@@ -22,19 +22,18 @@ function Resume() {
       tech: ["Java", "Python", "SQL", "UML"]
     },
     {
-      role: "Full Stack Developer",
-      company: "Microsoft",
-      period: "2019 - 2021",
-      location: "Seattle, WA",
-      description: "Developed features for Microsoft Teams",
+      role: "Technology Software Development",
+      company: "Citi bank",
+      period: "September 14th, 2024",
+      location: "United States",
+      description: "Enhanced Citi’s loan management system and stock market risk reporting.",
       certificate: "https://example.com/microsoft-certificate",
       achievements: [
-        "Built real-time collaboration features used by 1M+ users",
-        "Reduced application bundle size by 40% through code splitting",
-        "Implemented end-to-end encryption for video calls",
-        "Led migration from Angular to React, improving performance by 50%"
+        "Designed UML state diagram for the loan process.",
+        "Researched ML systems for credit risk assessment.",
+        "Built a Java tool for real-time stock market risk visualization.",
       ],
-      tech: ["React", "TypeScript", "Node.js", "WebRTC"]
+      tech: ["APIs", "System Design", "Data Visualization", "Machine Learning"]
     }
   ];
 
