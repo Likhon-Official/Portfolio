@@ -25,107 +25,68 @@ const Footer = () => {
     <footer className="relative pt-24 pb-12">
       {location.pathname !== '/contact' && (
         <motion.div 
-          className="max-w-7xl mx-auto mb-32 px-6"
+          className="max-w-3xl mx-auto text-center mb-20 px-6"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          <div className="grid md:grid-cols-2 gap-16 items-center">
-            {/* Get in Touch Section */}
-            <div className="relative">
-              <motion.div 
-                className="absolute -top-10 left-0 text-[120px] font-bold text-[#64ffda]/5 select-none pointer-events-none"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 0.3 }}
-              >
-                Contact
-              </motion.div>
-              <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-200 mb-6">
-                Let's Work <span className="text-[#64ffda]">Together</span>
-              </h2>
-              <p className="text-lg text-slate-400 mb-8 max-w-xl">
-                Have a project in mind? Let's discuss how we can bring your ideas to life. 
-                I'm always open to new opportunities and collaborations.
-              </p>
-              <Link to="/contact">
-                <motion.button 
-                  className="group relative inline-flex items-center gap-3 px-8 py-4 bg-[#64ffda] text-[#0a192f] rounded-lg font-semibold overflow-hidden"
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                >
-                  <span className="relative z-10">Get in Touch</span>
-                  <motion.i 
-                    className="ri-arrow-right-line relative z-10"
-                    animate={{ x: [0, 5, 0] }}
-                    transition={{ 
-                      duration: 1,
-                      repeat: Infinity,
-                      ease: "easeInOut"
-                    }}
-                  />
-                  <div className="absolute inset-0 bg-[#0a192f] transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left" />
-                  <span className="absolute inset-0 flex items-center justify-center gap-3 text-[#64ffda] opacity-0 group-hover:opacity-100 transition-opacity">
-                    <span>Get in Touch</span>
-                    <i className="ri-arrow-right-line" />
-                  </span>
-                </motion.button>
-              </Link>
-            </div>
-
-            {/* Shop Section */}
-            <div className="relative bg-[#112240] p-8 rounded-2xl">
-              <div className="absolute -right-4 -top-4 w-20 h-20 bg-[#64ffda]/10 rounded-full blur-2xl" />
-              <div className="absolute -left-4 -bottom-4 w-20 h-20 bg-[#64ffda]/10 rounded-full blur-2xl" />
-              <motion.div
-                initial={{ scale: 0 }}
-                animate={{ scale: 1 }}
-                transition={{ type: "spring", stiffness: 200, damping: 20 }}
-                className="w-16 h-16 bg-[#64ffda]/10 rounded-xl flex items-center justify-center mb-6"
-              >
-                <i className="ri-store-2-line text-3xl text-[#64ffda]" />
-              </motion.div>
-              <h2 className="text-3xl font-bold text-slate-200 mb-4">
-                Premium <span className="text-[#64ffda]">Products</span>
-              </h2>
-              <p className="text-slate-400 mb-8">
-                Explore my exclusive collection of premium products. Each item is crafted with attention 
-                to detail and designed to provide exceptional value.
-              </p>
-              <a 
-                href="https://axtillar.myspreadshop.com" 
-                target="_blank" 
-                rel="noopener noreferrer"
-              >
-                <motion.button 
-                  className="group relative w-full inline-flex items-center justify-center gap-3 px-8 py-4 bg-transparent border-2 border-[#64ffda] text-[#64ffda] rounded-lg font-semibold overflow-hidden"
-                  whileHover={{ scale: 1.02 }}
-                  whileTap={{ scale: 0.98 }}
-                >
-                  <span className="relative z-10">Visit Shop</span>
-                  <motion.i 
-                    className="ri-shopping-bag-line relative z-10"
-                    animate={{ 
-                      y: [0, -5, 0],
-                      rotate: [0, -10, 0]
-                    }}
-                    transition={{ 
-                      duration: 1.5,
-                      repeat: Infinity,
-                      ease: "easeInOut"
-                    }}
-                  />
-                  <div className="absolute inset-0 bg-[#64ffda] transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left" />
-                  <span className="absolute inset-0 flex items-center justify-center gap-3 text-[#0a192f] opacity-0 group-hover:opacity-100 transition-opacity">
-                    <span>Visit Shop</span>
-                    <i className="ri-shopping-bag-line" />
-                  </span>
-                </motion.button>
-              </a>
-            </div>
-          </div>
+          <h2 className="text-[#64ffda] font-mono mb-4 text-lg">What's Next?</h2>
+          <h3 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-200 mb-6">Get In Touch</h3>
+          <p className="text-lg text-slate-400 mb-8 max-w-2xl mx-auto">
+            I'm currently looking for new opportunities. Whether you have a question
+            or just want to say hello, I'll get back to you as soon as possible!
+          </p>
+          <Link to="/contact">
+            <motion.button 
+              className="group relative inline-flex items-center gap-2 px-8 py-4 bg-transparent border-2 border-[#64ffda] text-[#64ffda] rounded-lg font-mono text-lg overflow-hidden"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              <span className="relative z-10 transition-transform duration-300 group-hover:translate-x-1">Say Hello</span>
+              <i className="ri-send-plane-line relative z-10 transition-transform duration-300 group-hover:translate-x-2"></i>
+              <div className="absolute inset-0 bg-[#64ffda] transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></div>
+              <span className="absolute inset-0 flex items-center justify-center gap-2 text-[#0a192f] opacity-0 group-hover:opacity-100 transition-opacity">
+                <span>Say Hello</span>
+                <i className="ri-send-plane-line"></i>
+              </span>
+            </motion.button>
+          </Link>
         </motion.div>
       )}
+
+      {/* Shop Section */}
+      <motion.div 
+        className="max-w-3xl mx-auto text-center mb-20 px-6"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, delay: 0.2 }}
+      >
+        <h2 className="text-[#64ffda] font-mono mb-4 text-lg">Discover My Shop</h2>
+        <h3 className="text-3xl md:text-4xl font-bold text-slate-200 mb-6">Exclusive Premium Products</h3>
+        <p className="text-lg text-slate-400 mb-8 max-w-2xl mx-auto">
+       Explore my exclusive collection of premium products, Shop now and experience the best in every purchase.
+       
+        </p>
+        <a 
+          href="https://axtillar.myspreadshop.com" 
+          target="_blank" 
+          rel="noopener noreferrer"
+        >
+          <motion.button 
+            className="group relative inline-flex items-center gap-2 px-8 py-4 bg-[#64ffda] text-[#0a192f] rounded-lg font-mono text-lg overflow-hidden"
+            whileHover={{ scale: 1.05, y: -4 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            <span className="relative z-10">Visit Shop</span>
+            <i className="ri-shopping-bag-line relative z-10"></i>
+            <div className="absolute inset-0 bg-[#0a192f] transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></div>
+            <span className="absolute inset-0 flex items-center justify-center gap-2 text-[#64ffda] opacity-0 group-hover:opacity-100 transition-opacity">
+              <span>Visit Shop</span>
+              <i className="ri-shopping-bag-line"></i>
+            </span>
+          </motion.button>
+        </a>
+      </motion.div>
 
       <div className="max-w-6xl mx-auto px-6">
         <div className="grid md:grid-cols-3 gap-12 mb-12">
@@ -189,8 +150,6 @@ const Footer = () => {
               >
                 <a
                   href={link.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
                   aria-label={link.label}
                   className="text-slate-400 hover:text-[#64ffda] transition-all duration-300"
                 >
