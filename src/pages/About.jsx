@@ -1,6 +1,9 @@
 import { motion } from 'framer-motion';
+import { useState } from 'react';
 
 function About() {
+  const [imageColor, setImageColor] = useState(false);
+  
   const skills = [
     { name: "JavaScript", level: 90, color: "#F7DF1E" },
     { name: "React", level: 85, color: "#61DAFB" },
@@ -74,7 +77,6 @@ function About() {
         </motion.div>
       </header>
 
-      {/* Story Section */}
       <motion.div 
         variants={containerVariants}
         initial="hidden"
@@ -102,15 +104,21 @@ function About() {
         </motion.div>
 
         <motion.div variants={itemVariants} className="order-1 md:order-2">
-          <div className="relative group">
+          <div 
+            className="relative group cursor-pointer"
+            onClick={() => setImageColor(!imageColor)}
+          >
             <div className="relative z-10 rounded-2xl overflow-hidden bg-[#64ffda]/10 p-2">
-              <img
+              <motion.img
                 src="https://i.postimg.cc/KvtZqPj3/20250312-113125.jpg"
                 alt="Profile"
-                className="w-full h-full object-cover rounded-xl transition-all duration-500 
-                  filter grayscale hover:grayscale-0 hover:scale-105"
+                className={`w-full h-full object-cover rounded-xl transition-all duration-1000 ease-in-out
+                  ${imageColor ? '' : 'grayscale'} hover:scale-105`}
+                initial={{ filter: "grayscale(100%)" }}
+                animate={{ filter: imageColor ? "grayscale(0%)" : "grayscale(100%)" }}
+                transition={{ duration: 1 }}
               />
-              <div className="absolute inset-0 bg-[#64ffda]/10 mix-blend-multiply rounded-xl"></div>
+              <div className={`absolute inset-0 bg-[#64ffda]/10 mix-blend-multiply rounded-xl transition-opacity duration-1000 ${imageColor ? 'opacity-0' : 'opacity-100'}`}></div>
             </div>
             <div className="absolute inset-0 border-2 border-[#64ffda] rounded-2xl -z-10 translate-x-4 translate-y-4 
               transition-transform duration-300 group-hover:translate-x-6 group-hover:translate-y-6"></div>
@@ -118,7 +126,6 @@ function About() {
         </motion.div>
       </motion.div>
 
-      {/* Skills Section */}
       <motion.section
         variants={containerVariants}
         initial="hidden"
@@ -156,7 +163,6 @@ function About() {
         </motion.div>
       </motion.section>
 
-      {/* Interests Section */}
       <motion.section
         variants={containerVariants}
         initial="hidden"
