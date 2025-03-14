@@ -2,8 +2,10 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { TypeAnimation } from 'react-type-animation';
 import { Link } from 'react-router-dom';
+import { useState } from 'react';
 
 const Home = () => {
+  const [imageColor, setImageColor] = useState(false);
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: { 
@@ -109,14 +111,20 @@ const Home = () => {
           className="order-1 lg:order-2 flex justify-center lg:justify-end"
         >
           <div className="relative w-full max-w-sm lg:max-w-md">
-            <div className="relative z-10 rounded-2xl overflow-hidden aspect-square bg-[#64ffda]/10 p-2">
-              <img
+            <div 
+              className="relative z-10 rounded-2xl overflow-hidden aspect-square bg-[#64ffda]/10 p-2 cursor-pointer"
+              onClick={() => setImageColor(!imageColor)}
+            >
+              <motion.img
                 src="https://i.postimg.cc/KvtZqPj3/20250312-113125.jpg"
                 alt="LikHon Das"
-                className="w-full h-full object-cover rounded-xl transition-all duration-500 
-                  filter grayscale hover:grayscale-0 hover:scale-105"
+                className={`w-full h-full object-cover rounded-xl transition-all duration-1000 ease-in-out
+                  ${imageColor? '' : 'grayscale'} hover:scale-105`}
+                initial={{ filter: "grayscale(100%)" }}
+                animate={{ filter: imageColor ? "grayscale(0%)" : "grayscale(100%)" }}
+                transition={{ duration: 1 }}
               />
-              <div className="absolute inset-0 bg-[#64ffda]/10 mix-blend-multiply rounded-xl"></div>
+              <div className={`absolute inset-0 bg-[#64ffda]/10 mix-blend-multiply rounded-xl transition-opacity duration-1000 ${imageColor ? 'opacity-0' : 'opacity-100'}`}></div>
             </div>
             <div className="absolute inset-0 border-2 border-[#64ffda] rounded-2xl -z-10 translate-x-4 translate-y-4"></div>
           </div>
