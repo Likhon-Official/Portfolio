@@ -30,7 +30,8 @@ function Navbar() {
     { number: '02.', text: 'Services', path: '/services' },
     { number: '03.', text: 'Resume', path: '/resume' },
     { number: '04.', text: 'About', path: '/about' },
-    { number: '05.', text: 'Work', path: '/work' }
+    { number: '05.', text: 'Work', path: '/work' },
+    { number: '06.', text: 'Blog', path: '/blog' }
   ];
 
   return (
