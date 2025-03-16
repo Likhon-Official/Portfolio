@@ -13,6 +13,7 @@ const Resume = lazy(() => import('./pages/Resume'));
 const About = lazy(() => import('./pages/About'));
 const Work = lazy(() => import('./pages/Work'));
 const Contact = lazy(() => import('./pages/Contact'));
+const Blog = lazy(() => import('./pages/Blog'));
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -52,6 +53,7 @@ function App() {
                 <Route path="/about" element={<About />} />
                 <Route path="/work" element={<Work />} />
                 <Route path="/contact" element={<Contact />} />
+                <Route path="/blog" element={<Blog />} />
                 <Route path="*" element={<Navigate to="/" replace />} />
               </Routes>
             </ScrollReveal>
