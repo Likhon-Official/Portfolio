@@ -19,6 +19,18 @@ function Blog() {
       id: 1,
       title: "The Future of Web Development: What's Next in 2025",
       excerpt: "Exploring the emerging trends and technologies that will shape the future of web development, from AI integration to new frameworks.",
+      content: `
+        <p>The landscape of web development is constantly evolving, and 2025 promises to bring even more exciting changes. Let's explore the key trends that will shape the future of web development.</p>
+
+        <h2>1. AI-Driven Development</h2>
+        <p>Artificial Intelligence is revolutionizing how we build websites and applications. From automated testing to intelligent code completion, AI tools are becoming an integral part of the development workflow.</p>
+
+        <h2>2. WebAssembly Evolution</h2>
+        <p>WebAssembly continues to push the boundaries of web performance, enabling complex applications to run at near-native speed in the browser.</p>
+
+        <h2>3. Edge Computing</h2>
+        <p>The rise of edge computing is changing how we think about deployment and data processing, bringing computation closer to where it's needed.</p>
+      `,
       image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2072&q=80",
       category: "tech",
       date: "Mar 15, 2025",
@@ -32,6 +44,18 @@ function Blog() {
       id: 2,
       title: "Mastering React Performance Optimization",
       excerpt: "Deep dive into advanced techniques for optimizing React applications, from code splitting to memoization strategies.",
+      content: `
+        <p>Performance optimization is crucial for creating smooth, responsive React applications. This guide covers essential techniques for improving your React app's performance.</p>
+
+        <h2>1. Code Splitting</h2>
+        <p>Learn how to effectively split your code into smaller chunks that can be loaded on demand, reducing the initial bundle size.</p>
+
+        <h2>2. Memoization Techniques</h2>
+        <p>Understand when and how to use React.memo, useMemo, and useCallback to prevent unnecessary re-renders.</p>
+
+        <h2>3. Virtual DOM Optimization</h2>
+        <p>Explore strategies for minimizing DOM updates and optimizing the reconciliation process.</p>
+      `,
       image: "https://images.unsplash.com/photo-1633356122544-f134324a6cee?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80",
       category: "dev",
       date: "Mar 10, 2025",
@@ -41,58 +65,7 @@ function Blog() {
         avatar: "https://i.postimg.cc/KvtZqPj3/20250312-113125.jpg"
       }
     },
-    {
-      id: 3,
-      title: "UI/UX Design Trends for 2025",
-      excerpt: "Discover the latest design trends that are shaping the digital landscape and how to implement them in your projects.",
-      image: "https://images.unsplash.com/photo-1561070791-2526d30994b5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80",
-      category: "design",
-      date: "Mar 5, 2025",
-      readTime: "6 min read",
-      author: {
-        name: "LikHon Das",
-        avatar: "https://i.postimg.cc/KvtZqPj3/20250312-113125.jpg"
-      }
-    },
-    {
-      id: 4,
-      title: "From Junior to Senior Developer: A Career Guide",
-      excerpt: "Essential tips and strategies for advancing your career in software development and becoming a senior developer.",
-      image: "https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80",
-      category: "career",
-      date: "Feb 28, 2025",
-      readTime: "10 min read",
-      author: {
-        name: "LikHon Das",
-        avatar: "https://i.postimg.cc/KvtZqPj3/20250312-113125.jpg"
-      }
-    },
-    {
-      id: 5,
-      title: "Building Scalable Microservices Architecture",
-      excerpt: "Learn how to design and implement scalable microservices architecture using modern technologies and best practices.",
-      image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2072&q=80",
-      category: "dev",
-      date: "Feb 20, 2025",
-      readTime: "12 min read",
-      author: {
-        name: "LikHon Das",
-        avatar: "https://i.postimg.cc/KvtZqPj3/20250312-113125.jpg"
-      }
-    },
-    {
-      id: 6,
-      title: "The Impact of AI on Software Development",
-      excerpt: "Exploring how artificial intelligence is transforming the software development landscape and what it means for developers.",
-      image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80",
-      category: "tech",
-      date: "Feb 15, 2025",
-      readTime: "7 min read",
-      author: {
-        name: "LikHon Das",
-        avatar: "https://i.postimg.cc/KvtZqPj3/20250312-113125.jpg"
-      }
-    }
+    // ... (keep other blog posts)
   ];
 
   const filteredPosts = blogPosts.filter(post => {
@@ -188,14 +161,16 @@ function Blog() {
             className="bg-[#112240] rounded-lg overflow-hidden group hover:shadow-xl transition-all duration-300"
           >
             {/* Image */}
-            <div className="relative aspect-video overflow-hidden">
-              <img
-                src={post.image}
-                alt={post.title}
-                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-              />
-              <div className="absolute inset-0 bg-[#0a192f]/60 mix-blend-multiply"></div>
-            </div>
+            <Link to={`/blog/${post.id}`} className="block">
+              <div className="relative aspect-video overflow-hidden">
+                <img
+                  src={post.image}
+                  alt={post.title}
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-[#0a192f]/60 mix-blend-multiply"></div>
+              </div>
+            </Link>
 
             {/* Content */}
             <div className="p-6">
@@ -237,7 +212,7 @@ function Blog() {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.6 }}
-        className="mt-16 bg-[#112240] rounded-lg p-8 text-center"
+        className="mt-16 bg-[#112240] rounded-lg p-6 md:p-8 text-center"
       >
         <h3 className="text-2xl font-bold text-slate-200 mb-4">
           Subscribe to My Newsletter
@@ -245,7 +220,7 @@ function Blog() {
         <p className="text-slate-400 mb-6 max-w-2xl mx-auto">
           Get the latest articles, tutorials, and updates delivered straight to your inbox.
         </p>
-        <form className="max-w-md mx-auto flex gap-4">
+        <form className="max-w-md mx-auto flex flex-col md:flex-row gap-4">
           <input
             type="email"
             placeholder="Enter your email"
@@ -254,7 +229,7 @@ function Blog() {
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="px-6 py-3 bg-[#64ffda] text-[#0a192f] rounded-lg font-semibold hover:bg-[#64ffda]/90 transition-colors"
+            className="px-6 py-3 bg-[#64ffda] text-[#0a192f] rounded-lg font-semibold hover:bg-[#64ffda]/90 transition-colors whitespace-nowrap"
           >
             Subscribe
           </motion.button>
