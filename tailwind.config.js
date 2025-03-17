@@ -40,7 +40,50 @@ export default {
       padding: {
         'safe': 'env(safe-area-inset-bottom)',
       },
+      typography: {
+        DEFAULT: {
+          css: {
+            color: '#94a3b8',
+            h1: {
+              color: '#e2e8f0',
+            },
+            h2: {
+              color: '#e2e8f0',
+            },
+            h3: {
+              color: '#e2e8f0',
+            },
+            h4: {
+              color: '#e2e8f0',
+            },
+            strong: {
+              color: '#e2e8f0',
+            },
+            code: {
+              color: '#64ffda',
+            },
+            'code::before': {
+              content: '""',
+            },
+            'code::after': {
+              content: '""',
+            },
+            a: {
+              color: '#64ffda',
+              '&:hover': {
+                color: '#4fa',
+              },
+            },
+            pre: {
+              backgroundColor: '#0a192f',
+              color: '#94a3b8',
+            },
+          },
+        },
+      },
     },
   },
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/typography'),
+  ],
 }
