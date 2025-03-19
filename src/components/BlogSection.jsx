@@ -8,7 +8,7 @@ function BlogSection() {
       title: "The Future of Web Development: What's Next in 2025",
       excerpt: "Exploring the emerging trends and technologies that will shape the future of web development...",
       image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2072&q=80",
-      category: "Technology",
+      category: "tech",
       date: "Mar 15, 2025",
       readTime: "5 min read"
     },
@@ -17,16 +17,16 @@ function BlogSection() {
       title: "Mastering React Performance Optimization",
       excerpt: "Deep dive into advanced techniques for optimizing React applications...",
       image: "https://images.unsplash.com/photo-1633356122544-f134324a6cee?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80",
-      category: "Development",
+      category: "dev",
       date: "Mar 10, 2025",
       readTime: "8 min read"
     },
     {
       id: 3,
       title: "UI/UX Design Trends for 2025",
-      excerpt: "Discover the latest design trends that are shaping the digital landscape...",
+      excerpt: "Discover the latest design trends that are shaping the digital landscape in 2025...",
       image: "https://images.unsplash.com/photo-1561070791-2526d30994b5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80",
-      category: "Design",
+      category: "design",
       date: "Mar 5, 2025",
       readTime: "6 min read"
     }
