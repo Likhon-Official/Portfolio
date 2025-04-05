@@ -86,12 +86,12 @@ function About() {
         <motion.div variants={itemVariants} className="order-2 md:order-1">
           <div className="prose prose-invert max-w-none">
             <p className="text-lg text-slate-400 mb-6">
-              Hello! I'm LikHon, a passionate software developer based in San Francisco, CA. 
+              Hello! I'm LikHon, a passionate software developer based in Cumilla, Bangladesh. 
               I enjoy creating things that live on the internet, whether that be websites, 
               applications, or anything in between.
             </p>
             <p className="text-lg text-slate-400 mb-6">
-              My journey in web development started back in 2012 when I decided to try editing 
+              My journey in web development started back in 2021 when I decided to try editing 
               custom Tumblr themes — turns out hacking together a custom reblog button taught 
               me a lot about HTML & CSS!
             </p>
