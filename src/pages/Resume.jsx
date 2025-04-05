@@ -313,7 +313,7 @@ function Resume() {
                 </span>
                 <div className="absolute inset-0 bg-[#64ffda] transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left" />
                 <span className="absolute inset-0 flex items-center justify-center text-[#0a192f] opacity-0 group-hover:opacity-100 transition-opacity">
-                  {showAllCerts ? 'Show Less' : 'Show More'}
+                  {showAllCerts? 'Show Less' : 'Show More'}
                 </span>
               </motion.button>
             </motion.div>
@@ -329,7 +329,7 @@ function Resume() {
         transition={{ delay: 0.5 }}
       >
         <a
-          href="https://drive.google.com/file/d/1-CNF8sR9j0RBKLK8l3Kq74lwEcb52EJJ/view?usp=sharing"
+          href="https://drive.google.com/file"
           className="inline-flex items-center px-8 py-4 bg-[#64ffda] text-[#0a192f] rounded-lg font-mono text-lg font-semibold hover:bg-[#64ffda]/90 transition-colors"
         >
           <i className="ri-download-line mr-2"></i>
