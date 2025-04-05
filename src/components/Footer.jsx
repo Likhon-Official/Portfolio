@@ -7,11 +7,11 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   const links = [
-    { icon: "github", href: "https://github.com/Axtillar", label: "GitHub" },
-    { icon: "instagram", href: "https://www.instagram.com/axtillar", label: "Instagram" },
-    { icon: "twitter", href: "https://x.com/Axtillar", label: "Twitter" },
-    { icon: "linkedin", href: "https://www.linkedin.com/in/axtillar", label: "LinkedIn" },
-    { icon: "dribbble", href: "https://dribbble.com/Axtillar", label: "Dribbble" }
+    { icon: "github", href: "https://github.com", label: "GitHub" },
+    { icon: "instagram", href: "https://www.instagram.com", label: "Instagram" },
+    { icon: "twitter", href: "https://x.com", label: "Twitter" },
+    { icon: "linkedin", href: "https://www.linkedin.com", label: "LinkedIn" },
+    { icon: "dribbble", href: "https://dribbble.com", label: "Dribbble" }
   ];
 
   const footerLinks = [
@@ -68,7 +68,7 @@ const Footer = () => {
        
         </p>
         <a 
-          href="https://axtillar.myspreadshop.com" 
+          href="https://www.shopify.com/" 
           target="_blank" 
           rel="noopener noreferrer"
         >
