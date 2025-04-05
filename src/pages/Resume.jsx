@@ -66,67 +66,67 @@ function Resume() {
 
   const certifications = [
     {
-      name: "AWS Solutions Architect",
-      issuer: "Amazon Web Services",
-      date: "2023",
+      name: "CS50 AI",
+      issuer: "Harvard University",
+      date: "Computer Science",
       icon: "amazon-line",
-      certificate: "https://www.credly.com/badges/aws-certified-solutions-architect"
+      certificate: "https://www.credential.net"
     },
     {
       name: "Google Cloud Professional",
       issuer: "Google",
       date: "2022",
       icon: "google-line",
-      certificate: "https://www.credential.net/google-cloud-professional"
+      certificate: "https://www.credential.net"
     },
     {
       name: "MongoDB Developer",
       issuer: "MongoDB University",
       date: "2022",
       icon: "database-2-line",
-      certificate: "https://university.mongodb.com/certification/developer"
+      certificate: "https://www.credential.net"
     },
     {
       name: "Microsoft Azure Developer",
       issuer: "Microsoft",
       date: "2023",
       icon: "microsoft-line",
-      certificate: "https://learn.microsoft.com/azure-developer"
+      certificate: "https://www.credential.net"
     },
     {
       name: "Kubernetes Administrator",
       issuer: "Linux Foundation",
       date: "2023",
       icon: "terminal-box-line",
-      certificate: "https://training.linuxfoundation.org/certification/cka"
+      certificate: "https://www.credential.net"
     },
     {
       name: "React Developer",
       issuer: "Meta",
       date: "2023",
       icon: "reactjs-line",
-      certificate: "https://www.coursera.org/meta-react-developer"
+      certificate: "https://www.credential.net"
     },
     {
       name: "Python Professional",
       issuer: "Python Institute",
       date: "2022",
       icon: "python-line",
-      certificate: "https://pythoninstitute.org/certification"
+      certificate: "https://pythoninstitute.org/"
     },
     {
       name: "Cybersecurity Specialist",
       issuer: "CompTIA",
       date: "2023",
       icon: "shield-keyhole-line",
-      certificate: "https://www.comptia.org/certifications/security"
+      certificate: "https://www.credential.net"
     },
     {
       name: "Data Science Professional",
       issuer: "IBM",
       date: "2023",
       icon: "bar-chart-box-line",
-      certificate: "https://www.ibm.com/training/certification/data-science"
+      certificate: "https://www.ibm.com/training"
     }
   ];
 
