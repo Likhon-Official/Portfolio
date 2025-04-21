@@ -118,7 +118,7 @@ const Home = () => {
                 onClick={() => setImageColor(!imageColor)}
               >
                 <motion.img
-                  src="https://i.postimg.cc/KvtZqPj3/20250312-113125.jpg"
+                  src="https://i.ibb.co.com/mV1527PQ/20250312-113125.jpg"
                   alt="LikHon Das"
                   className={`w-full h-full object-cover rounded-xl transition-all duration-1000 ease-in-out
                     ${imageColor? '' : 'grayscale'} hover:scale-105`}
